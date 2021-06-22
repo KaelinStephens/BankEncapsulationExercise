@@ -13,14 +13,16 @@ namespace BankEncapsulationExercise
             {
 
                 Console.WriteLine("Would you like to deposit money or retrieve your balance?");
-                if (Console.ReadLine() == "deposit money")
+                var input = Console.ReadLine();
+                if (input == "deposit money")
                 {
                     Console.WriteLine("How much would you like to deposit?");
-                    BankAccount.Deposit(double.Parse(Console.ReadLine()));
+                    var amount = double.Parse(Console.ReadLine());
+                    BankAccount.Deposit(amount);
                     Console.WriteLine("Would you like to see your new account balance? (y/n)");
                     if (Console.ReadLine() == "y")
                     {
-                        Console.WriteLine(BankAccount.GetBalance());
+                        BankAccount.GetBalance();
                        
                     }
                     else if (Console.ReadLine()== "exit")
@@ -29,12 +31,12 @@ namespace BankEncapsulationExercise
                     }
                    
                 }
-                else if (Console.ReadLine() == "retrieve balance")
+                else if (input == "retrieve balance")
                 {
-                    Console.WriteLine(BankAccount.GetBalance());
+                    BankAccount.GetBalance();
                     
                 }
-                else if (Console.ReadLine() == "exit")
+                else if (input == "exit")
                 {
                     break;
                 }

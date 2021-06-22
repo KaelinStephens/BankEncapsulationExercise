@@ -8,18 +8,18 @@ namespace BankEncapsulationExercise
    {
         public BankAccount()
         {
-            Balance = 0;
+         
         }
-        private static double Balance { get; set; }
+        private static double balance;
 
-        public static void  Deposit(double deposit)
+        public  static void Deposit(double deposit)
         {
-            BankAccount.Balance = deposit + BankAccount.Balance;
+           balance += deposit;
         }
-        public static double GetBalance()
+        public static void  GetBalance()
         {
            
-            return BankAccount.Balance;
+            Console.WriteLine(balance);
         }
     }
 }
